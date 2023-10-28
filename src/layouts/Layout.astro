@@ -1,6 +1,16 @@
 ---
-interface Props {
-  title: string
+import type { Person } from 'src/types/person'
+// interface Props {
+//   title: string
+// }
+
+// PARA INDICAR QUE ESTE COMPONENTE NO RECIBE NINGUN PROP
+// type Props = Record<string, never>
+
+const Jorge: Person = {
+  name: 'cscs',
+  lastname: 'cscscs',
+  age: 23,
 }
 
 const { title } = Astro.props
@@ -33,9 +43,9 @@ const { title } = Astro.props
     );
   }
   html {
-    font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
+    font-family: sans-serif;
   }
   code {
     font-family:

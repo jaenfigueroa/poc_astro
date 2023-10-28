@@ -1,0 +1,14 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types'
+
+// PARA PERMITIR QUE EL ELEMENTO PUEDAD SER DE TIPO BUTTON O A, O EL LEMENTO QUE SE QUIERA
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+  children: any
+}
+
+const { as: Tag, children, ...props } = Astro.props
+---
+
+<Tag {...props}>
+  {children}
+</Tag>

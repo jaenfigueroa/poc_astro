@@ -1,3 +1,15 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    // para obligarno que al importar tipos, hacerlo asi -> import type { Person } from './person';
+    // activado por defecto en astro
+    "verbatimModuleSyntax": true,
+    /* CONFIGURAR ALIAS DE IMPORTACION */
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  }
 }
